@@ -2,12 +2,14 @@
 
 #   author:		https://github.com/m0nkeyplay
 #   August 25, 2020 - original script written
+#   Updated Aug 30 to add punctuation
 
 #   Alphabet cipher module
 
 #   This is a module.  It needs to be called in a script.
 #   Call with cac.scramble() and cac.descramble()
 #   This only scrambles letters.
+#   I lied.  It does punctuation now too.
 #   Not to be used in a production environment to keep secrets
 #   Put together based on a dinner conversation
 #   and the 7 year old saying "Hey!  What letter is the opposite of A?"
@@ -18,28 +20,45 @@ import string
 cac_ce = {}
 cac_cd = {}
 
-#   array to get it started
+#   arrays to get it started
 cac_forward = []
+cap_forward = []
 
-#   fill the array
+#   fill the arrays
 for letter in string.ascii_lowercase:
     cac_forward.append(letter)
+
+for p in string.punctuation:
+    cap_forward.append(p)
 
 #   copy and make the backward array
 cac_backward = cac_forward.copy()
 cac_backward.reverse()
 
+cap_backward = cap_forward.copy()
+cap_backward.reverse()
+
 #   fill the scramble dictionary
-cacx = 0
-for letter in cac_forward:
-    cac_ce[letter] = cac_backward[cacx]
-    cacx+=1
+x = 0
+for var in cac_forward:
+    cac_ce[var] = cac_backward[x]
+    x+=1
+
+x = 0
+for var in cap_forward:
+    cac_ce[var] = cap_backward[x]
+    x+=1
 
 #   fill the descramble dictionary
-cacy = 0
-for letter in cac_backward:
-    cac_cd[letter] = cac_forward[cacy]
-    cacy+=1
+x = 0
+for var in cac_backward:
+    cac_cd[var] = cac_forward[x]
+    x+=1
+
+x = 0
+for var in cap_backward:
+    cac_cd[var] = cap_forward[x]
+    x+=1
 
 #   scramble the text
 def scramble(theText):
