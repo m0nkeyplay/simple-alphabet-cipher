@@ -38,27 +38,18 @@ cac_backward.reverse()
 cap_backward = cap_forward.copy()
 cap_backward.reverse()
 
-#   fill the scramble dictionary
-x = 0
-for var in cac_forward:
-    cac_ce[var] = cac_backward[x]
-    x+=1
+#   make a dictionary that is the cipher
+def make_cipher(firstArray,dict,secondArray):
+    x = 0
+    for var in firstArray:
+        dict[var] = secondArray[x]
+        x +=1
 
-x = 0
-for var in cap_forward:
-    cac_ce[var] = cap_backward[x]
-    x+=1
-
-#   fill the descramble dictionary
-x = 0
-for var in cac_backward:
-    cac_cd[var] = cac_forward[x]
-    x+=1
-
-x = 0
-for var in cap_backward:
-    cac_cd[var] = cap_forward[x]
-    x+=1
+#   Fill in the cipher dictionaries
+make_cipher(cac_forward,cac_ce,cac_backward)
+make_cipher(cap_forward,cac_ce,cap_backward)
+make_cipher(cac_backward,cac_cd,cac_forward)
+make_cipher(cap_backward,cac_cd,cap_forward)
 
 #   scramble the text
 def scramble(theText):
