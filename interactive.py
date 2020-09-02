@@ -33,7 +33,7 @@ if __name__ == "__main__":
             print("\nHere your scrambled message:\n%s\n"%cac.scramble(scrambleMe))
         elif toDo.lower() == "d":
             descrambleMe = input("Great. What would you like to descramble?\n")
-            print("\n\nHere your message descrambled:\n%s\n"%cac.descramble(descrambleMe))
+            print("\n\nHere your message descrambled:\n%s\n"%cac.scramble(descrambleMe))
         elif toDo.lower() == "e":
             print("Have a great day!")
             exit()
