@@ -3,11 +3,12 @@
 #   author:		https://github.com/m0nkeyplay
 #   August 25, 2020 - original script written
 #   Updated Aug 30 to add punctuation
+#   Updated Sept 2 to make it simpler.  Simple is good.
 
 #   Alphabet cipher module
 
 #   This is a module.  It needs to be called in a script.
-#   Call with cac.scramble() and cac.descramble()
+#   Call with cac.scramble()
 #   This only scrambles letters.
 #   I lied.  It does punctuation now too.
 #   Not to be used in a production environment to keep secrets
@@ -16,9 +17,8 @@
 
 import string
 
-#   dictionaries holding the cipher keys and values
+#   dictionary holding the cipher keys and values
 cac_ce = {}
-cac_cd = {}
 
 #   arrays to get it started
 cac_forward = []
@@ -48,8 +48,6 @@ def make_cipher(firstArray,dict,secondArray):
 #   Fill in the cipher dictionaries
 make_cipher(cac_forward,cac_ce,cac_backward)
 make_cipher(cap_forward,cac_ce,cap_backward)
-make_cipher(cac_backward,cac_cd,cac_forward)
-make_cipher(cap_backward,cac_cd,cap_forward)
 
 #   scramble the text
 def scramble(theText):
@@ -58,18 +56,6 @@ def scramble(theText):
     for char in lowerMe:
         if char in cac_ce.keys():
             echar = cac_ce[char]
-            returnMe += str(echar)
-        else:
-            returnMe += str(char)
-    return returnMe
-
-#   descramble the text
-def descramble(theText):
-    lowerMe = theText.lower()
-    returnMe = ''
-    for char in lowerMe:
-        if char in cac_cd.keys():
-            echar = cac_cd[char]
             returnMe += str(echar)
         else:
             returnMe += str(char)
