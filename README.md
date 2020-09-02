@@ -8,7 +8,7 @@ Use it to scramble and descramble messages.
 
 `cac.scramble(text)`
 
-`cac.descramble(text)`
+Calling scramble will scramble or descramble the text.
 
 A message file is added for quick scrambling and descrambling short text or text in a file.
 
