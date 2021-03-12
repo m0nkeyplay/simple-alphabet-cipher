@@ -4,6 +4,8 @@
 #   August 25, 2020 - original script written
 #   Updated Aug 30 to add punctuation
 #   Updated Sept 2 to make it simpler.  Simple is good.
+#   Updated March 3, 2021 - not everthing needs to be lower case
+#                         - Keep your mask on
 
 #   Alphabet cipher module
 
@@ -25,7 +27,7 @@ cac_forward = []
 cap_forward = []
 
 #   fill the arrays
-for letter in string.ascii_lowercase:
+for letter in string.ascii_letters:
     cac_forward.append(letter)
 
 for p in string.punctuation:
@@ -51,9 +53,9 @@ make_cipher(cap_forward,cac_ce,cap_backward)
 
 #   scramble the text
 def scramble(theText):
-    lowerMe = theText.lower()
+    stripMe = theText.strip()
     returnMe = ''
-    for char in lowerMe:
+    for char in stripMe:
         if char in cac_ce.keys():
             echar = cac_ce[char]
             returnMe += str(echar)
