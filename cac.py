@@ -5,6 +5,7 @@
 #   Updated Aug 30 to add punctuation
 #   Updated Sept 2 to make it simpler.  Simple is good.
 #   Updated March 3, 2021 - not everthing needs to be lower case
+#                         - may as well add digits too
 #                         - Keep your mask on
 
 #   Alphabet cipher module
@@ -25,6 +26,7 @@ cac_ce = {}
 #   arrays to get it started
 cac_forward = []
 cap_forward = []
+cad_forward = []
 
 #   fill the arrays
 for letter in string.ascii_letters:
@@ -40,6 +42,9 @@ cac_backward.reverse()
 cap_backward = cap_forward.copy()
 cap_backward.reverse()
 
+ca_bdackward = cad_forward.copy()
+cad_backward.reverse()
+
 #   make a dictionary that is the cipher
 def make_cipher(firstArray,dict,secondArray):
     x = 0
@@ -50,6 +55,7 @@ def make_cipher(firstArray,dict,secondArray):
 #   Fill in the cipher dictionaries
 make_cipher(cac_forward,cac_ce,cac_backward)
 make_cipher(cap_forward,cac_ce,cap_backward)
+make_cipher(cad_forward,cac_ce,cad_backward)
 
 #   scramble the text
 def scramble(theText):
