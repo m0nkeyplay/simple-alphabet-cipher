@@ -12,9 +12,7 @@ Calling scramble will scramble or descramble the text.
 
 A message file is added for quick scrambling and descrambling short text or text in a file.
 
-[![asciicast](https://asciinema.org/a/YhgZ4lJuNTVfOMzGNDSablTz8.svg)](https://asciinema.org/a/YhgZ4lJuNTVfOMzGNDSablTz8)
-
 Also an interactive script to play with the kids.
 
-[![asciicast](https://asciinema.org/a/2Ej1dyiUtQz36nvMEXV3XFYbX.svg)](https://asciinema.org/a/2Ej1dyiUtQz36nvMEXV3XFYbX)
+Finally, play with it online @ https://play.themonkeyplayground.com:8888
 
