@@ -1,6 +1,6 @@
 # simple-alphabet-cipher
 
-a module created after a dinner talk with my 7 year old.  We are using it to learn about programming.
+a module created after a dinner talk with my (then) 7 year old.  We are using it to learn about programming.
 
 Use it to scramble and descramble messages.
 
